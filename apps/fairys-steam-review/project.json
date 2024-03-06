@@ -1,0 +1,80 @@
+{
+  "name": "fairys-steam-review",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "prefix": "avans-nx-workshop",
+  "sourceRoot": "apps/fairys-steam-review/src",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@angular-devkit/build-angular:application",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/apps/fairys-steam-review",
+        "index": "apps/fairys-steam-review/src/index.html",
+        "browser": "apps/fairys-steam-review/src/main.ts",
+        "polyfills": ["zone.js"],
+        "tsConfig": "apps/fairys-steam-review/tsconfig.app.json",
+        "assets": [
+          "apps/fairys-steam-review/src/favicon.ico",
+          "apps/fairys-steam-review/src/assets"
+        ],
+        "styles": ["apps/fairys-steam-review/src/styles.css"],
+        "scripts": [],
+        "server": "apps/fairys-steam-review/src/main.server.ts",
+        "prerender": true,
+        "ssr": {
+          "entry": "apps/fairys-steam-review/server.ts"
+        }
+      },
+      "configurations": {
+        "production": {
+          "budgets": [
+            {
+              "type": "initial",
+              "maximumWarning": "500kb",
+              "maximumError": "1mb"
+            },
+            {
+              "type": "anyComponentStyle",
+              "maximumWarning": "2kb",
+              "maximumError": "4kb"
+            }
+          ],
+          "outputHashing": "all"
+        },
+        "development": {
+          "optimization": false,
+          "extractLicenses": false,
+          "sourceMap": true
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "serve": {
+      "executor": "@angular-devkit/build-angular:dev-server",
+      "configurations": {
+        "production": {
+          "buildTarget": "fairys-steam-review:build:production"
+        },
+        "development": {
+          "buildTarget": "fairys-steam-review:build:development"
+        }
+      },
+      "defaultConfiguration": "development"
+    },
+    "extract-i18n": {
+      "executor": "@angular-devkit/build-angular:extract-i18n",
+      "options": {
+        "buildTarget": "fairys-steam-review:build"
+      }
+    },
+    "serve-static": {
+      "executor": "@nx/web:file-server",
+      "options": {
+        "buildTarget": "fairys-steam-review:build",
+        "staticFilePath": "dist/apps/fairys-steam-review/browser"
+      }
+    }
+  }
+}
