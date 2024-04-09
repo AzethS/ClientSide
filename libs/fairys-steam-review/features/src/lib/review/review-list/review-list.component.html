@@ -1,0 +1,8 @@
+<div *ngFor="let review of reviews">
+    <h2>{{ review.title }}</h2>
+    <p>Beschrijving: {{review.content}}</p>
+    <p>Posted: {{review.postDate | date : 'long' }}</p>
+
+ </div>
+
+

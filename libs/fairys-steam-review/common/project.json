@@ -1,0 +1,9 @@
+{
+  "name": "common",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/fairys-steam-review/common/src",
+  "prefix": "avans-nx-workshop",
+  "tags": [],
+  "projectType": "library",
+  "targets": {}
+}

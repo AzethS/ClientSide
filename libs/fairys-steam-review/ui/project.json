@@ -1,0 +1,9 @@
+{
+  "name": "ui",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/fairys-steam-review/ui/src",
+  "prefix": "avans-nx-workshop",
+  "tags": [],
+  "projectType": "library",
+  "targets": {}
+}
