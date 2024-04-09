@@ -26,7 +26,11 @@
         "libs/fairys-steam-review/features/src/index.ts"
       ],
       "@avans-nx-workshop/shared/api": ["libs/shared/api/src/index.ts"],
-      "@avans-nx-workshop/ui": ["libs/fairys-steam-review/ui/src/index.ts"]
+      "@avans-nx-workshop/shared/util-env": [
+        "libs/shared/util-env/src/index.ts"
+      ],
+      "@avans-nx-workshop/ui": ["libs/fairys-steam-review/ui/src/index.ts"],
+      "@avans-nx-workshop/util-env": ["util-env/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
